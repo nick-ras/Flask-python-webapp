@@ -1,14 +1,27 @@
-This is a flask webapp, that has a db with 2 tables, a users table and a boxes table. 
-I made a frontend website where users can log in and book boxes for 6-48 hours. 
-A use-case could be for for box storage around a city, where users can book boxes or pick up packages or other stuff. 
-I use sqlalchemy for securing against sql injection, and FLASK_WTF for CRSF.
-I use JQuery for dynamic webpages.
-I also my unit and integration tests in the pytests folder.
-I made a docker file that succesfully creates a docker image that can be used on other ubuntu versions, since it fetches  msodbcsql18 drivers for the specific ubuntu version. For this to work your DB server would have to use microsoft sql server odbc driver, otherwise you would have to install other database drivers.
-There is a couple of env vars you would have to set like APP_SETTINGS, DATABASE_URL and SECRET_KEY in order for it to work. 
+# Flask Web Application for Box Booking
 
-I use virtual environment so you can just install the requierements.txt file in a new environment.
-I have a simple setup where i just execute python with "python3 app.py run", but check in y_commands file
+This is a Flask-based web application designed for users to book boxes for storage, package pickup, or other similar use cases. The application features a user authentication system, dynamic webpage interactions, and a secure environment for both users and data.
 
+## Features
 
-Tests have been implmented in pytests folder, check in y_commands file for commands
+- **User Authentication**: Users can securely log in to the system, manage their bookings, and track reservations.
+- **Box Booking**: Users can book boxes for a duration ranging from 6 to 48 hours.
+- **Dynamic Webpages**: Using JQuery, the frontend is designed to provide a smooth user experience with real-time updates.
+- **Security**: 
+  - **SQL Injection Protection**: The application uses **SQLAlchemy** to interact with the database, which prevents SQL injection attacks by automatically escaping user inputs.
+  - **CSRF Protection**: Flask-WTF is used to ensure all form submissions are secured against Cross-Site Request Forgery (CSRF) attacks.
+  - **Session Management**: Flask handles user sessions securely, ensuring that user data is stored in a way that prevents session hijacking and fixation.
+  - **Basic Authentication**: Passwords are securely handled, and user credentials are stored with secure hashing techniques (though more advanced hashing techniques can be added based on needs).
+
+## Architecture
+
+The application uses a database with two main tables:
+- **Users Table**: Stores user credentials, including hashed passwords, and user data.
+- **Boxes Table**: Stores information about available boxes and booking details.
+
+## Setup Instructions
+
+### Requirements
+
+- Python 3.x
+- A database server running Microsoft SQL Server (ODBC driver required).
