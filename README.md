@@ -2,12 +2,6 @@
 
 This is a Flask-based web application designed for users to book boxes for storage, package pickup, or other similar use cases. The application features a user authentication system, dynamic webpage interactions, and a secure environment for both users and data.
 
-- **Model-View-Controller (MVC)**: 
-  - The application uses the MVC architecture, where:
-    - **Model**: Represents the application's data structure, which is mapped to the database using SQLAlchemy.
-    - **View**: The frontend is built with HTML, CSS, and JavaScript (JQuery for dynamic interactions) to provide an interactive user interface.
-    - **Controller**: The Flask routes (views) handle the business logic, such as user authentication, box booking, and other interactions between the user and the data.
-
 
 ## Features
 
@@ -22,9 +16,11 @@ This is a Flask-based web application designed for users to book boxes for stora
 
 ## Architecture
 
-The application uses a database with two main tables:
-- **Users Table**: Stores user credentials, including hashed passwords, and user data.
-- **Boxes Table**: Stores information about available boxes and booking details.
+- **Model-View-Controller (MVC)**: 
+  - The application uses the MVC architecture, where:
+    - **Model**: Represents the application's data structure, which is mapped to the database using SQLAlchemy.
+    - **View**: The frontend is built with HTML, CSS, and JavaScript (JQuery for dynamic interactions) to provide an interactive user interface.
+    - **Controller**: The Flask routes (views) handle the business logic, such as user authentication, box booking, and other interactions between the user and the data.
 
 ## Setup Instructions
 
